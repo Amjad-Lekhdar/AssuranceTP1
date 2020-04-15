@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 7 resources" deleteContents="false" description="Delete 7 resources" element1="/TP1/src/tp1Partie3/Client.java" element2="/TP1/src/tp1Partie3/Commande.java" element3="/TP1/src/tp1Partie3/facture.txt" element4="/TP1/src/tp1Partie3/Principal.java" element5="/TP1/src/tp1Partie3/Specifications-Amjad-Lekhdar.txt" element6="/TP1/src/tp1Partie3/Specifications-Max-Gauthier.txt" element7="/TP1/src/tp1Partie3/suivi.txt" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="7" stamp="1586909142661"/>
+</session>
