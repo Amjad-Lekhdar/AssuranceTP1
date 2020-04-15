@@ -1,0 +1,25 @@
+package tp1Partie3.test;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import org.junit.Test;
+
+public class Cas3 {
+
+	@Test
+	public static String[] lireFichier( String chemin ) throws FileNotFoundException, IOException {
+
+		String[] chaqueLigne = null;
+
+		try (BufferedReader br = new BufferedReader( new FileReader( chemin ) )) {
+			String ligne;
+
+			 	ligne = br.readLine();
+				chaqueLigne=ligne.split(";");
+			
+		} 
+		return chaqueLigne;
+	}
+}

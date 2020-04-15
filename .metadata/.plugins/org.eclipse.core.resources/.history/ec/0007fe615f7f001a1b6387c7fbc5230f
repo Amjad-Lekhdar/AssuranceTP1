@@ -1,0 +1,19 @@
+package tp1Partie3.test;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import org.junit.Test;
+import org.omg.CORBA.portable.InputStream;
+
+public class Cas4 {
+	
+	@Test
+	public void testMain() throws IOException {
+		
+		System.out.println("main");
+		String[] args  = null;
+		final InputStream original = (InputStream) System.in;
+		final FileInputStream fips = new FileInputStream(new File("[src/tp1Partie3/main]"));
+	}
+}
