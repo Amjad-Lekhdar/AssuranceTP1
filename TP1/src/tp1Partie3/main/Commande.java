@@ -4,7 +4,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Commande {
 	
@@ -60,6 +63,12 @@ public class Commande {
 		
 	}
 	
+	public String toString() { 
+        return "\nNom : " + nom +"\n" +
+        		"Total : " + calculerPrix()+"$" +"\n" ; 
+    } 
+	
+	
 	public void afficheTotal() {
 		System.out.println("\nNom : " + nom);
 		System.out.println("Total : " + calculerPrix()+"$");
@@ -79,6 +88,11 @@ public class Commande {
 		} 
 		return chaqueLigne;
 	}
+	
+	
+	
+	
+	
 	
 	
 }
