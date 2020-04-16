@@ -1,0 +1,17 @@
+package tp1Partie3.test;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import org.junit.Test;
+
+public class Cas3 {
+
+	@Test
+	public void lireFichier( String chemin ) throws FileNotFoundException, IOException {
+
+		Commande fichier = new Commande();
+		
+	}
+}

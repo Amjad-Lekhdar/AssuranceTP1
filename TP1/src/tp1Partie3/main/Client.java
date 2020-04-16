@@ -2,8 +2,6 @@ package tp1Partie3.main;
 
 public class Client {
 	
-	
-	
 	static String nom;
 	static String plat;
 	static int nbCommande;
@@ -14,11 +12,6 @@ public class Client {
 		nom=pNom;
 		plat=pPlat;
 		nbCommande=pNbCommande;
-		total=pTotal;
-				
-		
-		
+		total=pTotal;	
 	}
-	
-	
 }
