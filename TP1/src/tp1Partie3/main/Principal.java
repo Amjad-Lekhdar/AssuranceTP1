@@ -2,11 +2,13 @@ package tp1Partie3.main;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.Console;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.lang.reflect.Array;
 import java.time.LocalDateTime;
@@ -23,6 +25,9 @@ public class Principal {
 	
 	private static ArrayList<Commande> listeCommande = new ArrayList<Commande>(3);
 	
+	private static Commande com1 ;
+	private static Commande com2;
+	private static Commande com3;
 	
 	
 	
@@ -48,52 +53,45 @@ public class Principal {
 		System.out.println("Bienvenue chez Barette");
 		
 		
-		/*cela affiche le total de chaque clients
-		 * 
-		 * Affichage:
-		 * 
-		 * 
-		 * Bienvenue chez Barette
-
-			Nom : Roger
-			Total : 10.5$
-			
-			Nom : Céline
-			Total : 20.75$
-			
-			Nom : Steeve
-			Total : 0.0$
+		
+		
+		créerCommande();
 
 		
-		 */
-		
-		Commande com1 = new Commande(tabClient[0],1,0,0);
-		
-		listeCommande.add(0,com1);
-		
-		Commande com2 = new Commande(tabClient[1],0,2,1 );
-		
-		//Commande com3 = new Commande(tabClient[2], 0, 0, 0);
-		
-		//com1.afficheTotal();
-		
-		listeCommande.add(0,com1);
-	
-		
-		//com2.afficheTotal();
-		
-		listeCommande.add(1,com2);
-		
-		//com3.afficheTotal();
-		
-		//listeCommande.add(2, com3);
-		
-		
-		System.out.println(listeCommande.toString());
-
-		EcrireFichier();
 		
 		 
+		
+	}
+	
+	
+	public static void créerCommande() throws FileNotFoundException, IOException {
+		
+		com1 = new Commande(tabClient[0],1,0,0);
+		
+		com1.afficheTotal();
+		
+		EcrireFichier(com1);
+		
+		
+		
+		
+		com2 = new Commande(tabClient[1],0,2,1 );
+		
+		com2.afficheTotal();
+		
+		EcrireFichier(com2);
+
+		
+		
+		com3 = new Commande(tabClient[2], 0, 0, 0);
+		
+		com3.afficheTotal();
+		
+		
+		EcrireFichier(com3);
+
+		
+
 		
 	}
 	
@@ -115,42 +113,34 @@ public class Principal {
 		return chaqueLigne;
 	}
 	
-	public static void EcrireFichier() throws FileNotFoundException, IOException {
+	public static void EcrireFichier(Commande com) throws FileNotFoundException, IOException {
 
 		
 		
 		 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH:mm");
 		 LocalDateTime now = LocalDateTime.now();
 		 //String monFichier="Facture-du-"+dtf.format(now).toString()+".txt";
-		 String monFichier="Facture-du-.txt";
+		 String monFichier="Facture-du.txt";
 
 		 
+		 
 		 try {
+			 
 			
 			 
-			 PrintWriter  fichier = new PrintWriter(monFichier);
-		
+			 
+			 FileWriter fw = new FileWriter(monFichier,true);
+			 fw.write(com.toString());
+			 fw.close();
+
+             
+         }catch(FileNotFoundException fx) {
+
+             System.out.println(fx);
+         }
 		 
-	       
-		for (Commande commande : listeCommande) {
-			
-			fichier.write(commande.toString());
-			
-		}
-		
-		
-		 
-		 
-	
-	       
-		 fichier.close();
-		 
-		 }
-		 catch (IOException e)
-		 {
-		 e.printStackTrace();
-		 }
 		
 	}
+
 
 }
