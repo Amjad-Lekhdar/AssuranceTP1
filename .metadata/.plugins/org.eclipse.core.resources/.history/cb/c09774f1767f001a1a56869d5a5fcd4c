@@ -69,8 +69,6 @@ public class Principal {
 		
 		Commande com1 = new Commande(tabClient[0],1,0,0);
 		
-		listeCommande.add(0,com1);
-		
 		Commande com2 = new Commande(tabClient[1],0,2,1 );
 		
 		//Commande com3 = new Commande(tabClient[2], 0, 0, 0);
@@ -86,7 +84,7 @@ public class Principal {
 		
 		//com3.afficheTotal();
 		
-		//listeCommande.add(2, com3);
+		listeCommande.add(2, com3);
 		
 		
 		System.out.println(listeCommande.toString());

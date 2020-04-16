@@ -69,27 +69,29 @@ public class Principal {
 		
 		Commande com1 = new Commande(tabClient[0],1,0,0);
 		
+		com1.afficheTotal();
+		
 		listeCommande.add(0,com1);
+		
+		
 		
 		Commande com2 = new Commande(tabClient[1],0,2,1 );
 		
-		//Commande com3 = new Commande(tabClient[2], 0, 0, 0);
-		
-		//com1.afficheTotal();
-		
-		listeCommande.add(0,com1);
-	
-		
-		//com2.afficheTotal();
+		com2.afficheTotal();
 		
 		listeCommande.add(1,com2);
 		
-		//com3.afficheTotal();
 		
-		//listeCommande.add(2, com3);
+
+		
+		Commande com3 = new Commande(tabClient[2], 0, 0, 0);
+			
+		com3.afficheTotal();
+		
+		listeCommande.add(2, com3);
 		
 		
-		System.out.println(listeCommande.toString());
+		
 
 		EcrireFichier();
 		
@@ -129,12 +131,14 @@ public class Principal {
 			
 			 
 			 PrintWriter  fichier = new PrintWriter(monFichier);
-		
+		 
+			 //PrintWriter  fichier = new PrintWriter(new File("Facture.txt"));
+
 		 
 	       
-		for (Commande commande : listeCommande) {
+		for (Commande com : listeCommande) {
 			
-			fichier.write(commande.toString());
+			fichier.write(com.toString());
 			
 		}
 		
