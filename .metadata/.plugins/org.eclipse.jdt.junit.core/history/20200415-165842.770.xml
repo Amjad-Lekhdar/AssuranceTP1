@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="Cas3" project="TP1" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="tp1Partie3.test.Cas3" time="0.0" displayname="Cas3" uniqueid="[engine:junit-vintage]/[runner:tp1Partie3.test.Cas3]">
-    <testcase name="lireFichier" classname="tp1Partie3.test.Cas3" time="0.0" displayname="lireFichier" uniqueid="[engine:junit-vintage]/[runner:tp1Partie3.test.Cas3]/[test:lireFichier(tp1Partie3.test.Cas3)]"/>
-  </testsuite>
-</testrun>
