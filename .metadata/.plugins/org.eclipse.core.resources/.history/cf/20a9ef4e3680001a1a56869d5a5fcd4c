@@ -28,7 +28,6 @@ public class Principal {
 	private static Commande com1 ;
 	private static Commande com2;
 	private static Commande com3;
-	private static String monFichier;
 	
 	
 	
@@ -49,10 +48,6 @@ public class Principal {
 		tabPlats[1]=tab[7];
 		tabPlats[2]=tab[9];
 		
-		
-		 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH:mm");
-		 LocalDateTime now = LocalDateTime.now();
-		 monFichier="Facture-du-"+dtf.format(now).toString()+".txt";
 		
 		
 		System.out.println("Bienvenue chez Barette");
@@ -125,6 +120,13 @@ public class Principal {
 
 		
 		
+		 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH:mm");
+		 LocalDateTime now = LocalDateTime.now();
+		 //String monFichier="Facture-du-"+dtf.format(now).toString()+".txt";
+		 String monFichier="Facture-du.txt";
+
+		 
+		 
 		 try {
 			 
 			
@@ -146,7 +148,7 @@ public class Principal {
 	public static void delete() {
 		
 		
-		 File myObj = new File(monFichier); 
+		 File myObj = new File("Facture-du.txt"); 
 		    if (myObj.delete()) { 
 		      
 		    } else {

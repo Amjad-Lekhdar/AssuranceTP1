@@ -146,7 +146,7 @@ public class Principal {
 	public static void delete() {
 		
 		
-		 File myObj = new File(monFichier); 
+		 File myObj = new File("Facture-du.txt"); 
 		    if (myObj.delete()) { 
 		      
 		    } else {
