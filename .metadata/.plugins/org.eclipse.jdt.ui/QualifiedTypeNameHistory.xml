@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<<<<<<< HEAD
+<fullyQualifiedTypeName name="java.io.PrintStream"/>
 <fullyQualifiedTypeName name="tp1Partie3.main.Commande"/>
-<fullyQualifiedTypeName name="org.junit.runners.ParentRunner"/>
-<fullyQualifiedTypeName name="org.omg.CORBA.portable.InputStream"/>
-<fullyQualifiedTypeName name="java.io.FileInputStream"/>
-<fullyQualifiedTypeName name="tp1Partie3.main.Principal"/>
-=======
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
-<fullyQualifiedTypeName name="java.io.FileWriter"/>
-<fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
-<fullyQualifiedTypeName name="java.time.LocalDateTime"/>
-<fullyQualifiedTypeName name="java.lang.reflect.Array"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="tp1Partie3.main.Commande"/>
-<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
-<fullyQualifiedTypeName name="java.awt.List"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
->>>>>>> 5432fac601adde07cb279f5c93edcb13dfd7a48d
 </qualifiedTypeNameHistroy>

@@ -29,21 +29,23 @@ public class Commande {
 	
 	
 	public Commande(String pNom,  int pNbPoutine,int pNbFrites,int pNbPoulet) throws FileNotFoundException, IOException {
+		String[] commande = {""};
 		
-		nom=pNom;
-		
-		nbPoutine=pNbPoutine;
-		nbFrites=pNbFrites;
-		nbPoulet=pNbPoulet;
-		
-		
-		String[] tab=lireFichier(new File("src/tp1Partie3/main/facture.txt").getAbsolutePath());
-		
-		PrixPoutine = Double.parseDouble(tab[6]);
-		PrixFrite = Double.parseDouble(tab[8]);
-		prixPoulet=Double.parseDouble(tab[10]);
-				
-		
+		for (int i = 0; i < commande.length; i++) {
+			
+			nom=pNom;
+			
+			nbPoutine=pNbPoutine;
+			nbFrites=pNbFrites;
+			nbPoulet=pNbPoulet;
+			
+			
+			String[] tab=lireFichier(new File("src/tp1Partie3/main/facture.txt").getAbsolutePath());
+			
+			PrixPoutine = Double.parseDouble(tab[6]);
+			PrixFrite = Double.parseDouble(tab[8]);
+			prixPoulet=Double.parseDouble(tab[10]);
+		}
 		
 	}
 	
@@ -52,15 +54,9 @@ public class Commande {
 		
 		double total = 0;
 		
-		
 		total=(nbFrites*PrixFrite)+(nbPoutine*PrixPoutine)+(nbPoulet*prixPoulet);
 		
-		
 		return total;
-		
-		
-		
-		
 	}
 	
 	public String toString() { 
@@ -70,6 +66,7 @@ public class Commande {
 	
 	
 	public void afficheTotal() {
+	
 		System.out.println("\nNom : " + nom);
 		System.out.println("Total : " + calculerPrix()+"$");
 		
