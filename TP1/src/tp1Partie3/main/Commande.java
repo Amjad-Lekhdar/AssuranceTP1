@@ -16,9 +16,9 @@ public class Commande {
 	
 	static String nom;
 	
-	static int nbPoutine;
-	static int nbFrites;
-	static int nbPoulet;
+	public static int nbPoutine;
+	public static int nbFrites;
+	public static int nbPoulet;
 	
 
 	private static double prixPoulet;
@@ -55,10 +55,9 @@ public class Commande {
 		
 		double total = 0;
 		
-<<<<<<< HEAD
+
 		total=(nbFrites*PrixFrite)+(nbPoutine*PrixPoutine)+(nbPoulet*prixPoulet);
-		
-=======
+
 		DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(2); // arrondi à 2 chiffres apres la virgules
         df.setMinimumFractionDigits(2);
@@ -69,7 +68,7 @@ public class Commande {
 		
 		df.format(total);
 		
->>>>>>> f7b90e37aec29d1454e75e8529fb24f8826531d6
+
 		return total;
 	}
 	
@@ -87,9 +86,6 @@ public class Commande {
 	
 	
 	public void afficheTotal() {
-<<<<<<< HEAD
-	
-=======
 		
 		DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(2); 
@@ -97,8 +93,6 @@ public class Commande {
         df.setDecimalSeparatorAlwaysShown(true);
 		
 		
-		
->>>>>>> f7b90e37aec29d1454e75e8529fb24f8826531d6
 		System.out.println("\nNom : " + nom);
 		System.out.println("Total : " + df.format(calculerPrix())+"$");
 		
@@ -118,10 +112,25 @@ public class Commande {
 		return chaqueLigne;
 	}
 	
-	
-	
-	
-	
-	
-	
+	public static void commandeIncorrecte(Commande com) {
+		
+		try {
+			if (com.calculerPrix() == 0 || Commande.nbFrites < 0 || Commande.nbPoulet < 0 || Commande.nbPoutine < 0 ) {
+				
+				System.out.println("\nVoici les commandes incorrectes : ");
+				
+				if (com.calculerPrix() == 0) {
+					System.out.println("\nLa valeur totale de la commande de " + Commande.nom + " est à 0$." );
+				}
+				if (Commande.nbFrites < 0 || Commande.nbPoulet < 0 || Commande.nbPoutine < 0) {
+					System.out.println("\nLe nombre de frites ou de poulets ou de poutines de la commande à " + 
+						Commande.nom + " est une valeur erronée.");
+				}
+				com.toString();
+			}
+			
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
 }

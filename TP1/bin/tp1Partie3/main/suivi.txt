@@ -1,0 +1,8 @@
+Amjad-Lekdhar :
+	1. S'occuper de faire une commande pour le calcul pour des taxes.
+	2. S'occuper de faire 6 tests unitaires.
+	
+	
+Max Gauthier :
+	1. S'occuper de faire une commande pour modifier la date et l'heure du nom du fichier texte.
+	2. S'occuper de faire 6 tests unitaires.
