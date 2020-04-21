@@ -2,10 +2,10 @@ package tp1Partie3.main;
 
 public class Client {
 	
-	static String nom;
-	static String plat;
-	static int nbCommande;
-	static double total;
+	public static String nom;
+	public static String plat;
+	public static int nbCommande;
+	public static double total;
 	
 	public Client(String pNom, String pPlat, int pNbCommande, double pTotal) {
 		

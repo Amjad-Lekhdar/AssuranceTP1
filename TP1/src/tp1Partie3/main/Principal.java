@@ -1,13 +1,12 @@
 package tp1Partie3.main;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.Console;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+<<<<<<< HEAD
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.lang.reflect.Array;
@@ -18,16 +17,16 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+=======
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+>>>>>>> 9ec3da71d69c1a1d51e4be4b3bdc54b6ebd43540
 import tp1Partie3.main.Commande;
-
 public class Principal {
 	
 	private static String[] tabClient = new String[3];
 	private static String[] tabPlats = new String[3];
-	private static Commande[] tabCommande = new Commande[3];
-	
-	private static ArrayList<Commande> listeCommande = new ArrayList<Commande>(3);
-	
 	private static Commande com1 ;
 	private static Commande com2;
 	private static Commande com3;
@@ -52,6 +51,7 @@ public class Principal {
 		tabPlats[1]=tab[7];
 		tabPlats[2]=tab[9];
 		
+<<<<<<< HEAD
 		
 		Date actuelle = new Date();
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd-HH:mm");
@@ -63,64 +63,59 @@ public class Principal {
 		 monFichier="Facture-du-"+date+".txt";
 		 //monFichier="Facture-du-.txt";
 
+=======
+		monFichier="Facture-du-.txt";
+>>>>>>> 9ec3da71d69c1a1d51e4be4b3bdc54b6ebd43540
 		
 		System.out.println("Bienvenue chez Barette");
 		
-		
-		
+		System.out.println("Facture  : ");
 		
 		créerCommande();
-
-		
-		
-		 
-		
 	}
-	
-	
+
 	public static void créerCommande() throws FileNotFoundException, IOException {
 		
-		
-		delete();
-		
 		com1 = new Commande(tabClient[0],1,0,0);
+		
+		Commande.commandeIncorrecte(com1);
 		
 		com1.afficheTotal();
 		
 		EcrireFichier(com1);
 		
-		
-		
-		
 		com2 = new Commande(tabClient[1],0,2,1 );
+		
+		Commande.commandeIncorrecte(com2);
 		
 		com2.afficheTotal();
 		
 		EcrireFichier(com2);
 
-		
-		
 		com3 = new Commande(tabClient[2], 0, 0, 0);
 		
+		Commande.commandeIncorrecte(com3);
+		
 		com3.afficheTotal();
-		
-		
+	
 		EcrireFichier(com3);
+<<<<<<< HEAD
 		
 		Date actuelle = new Date();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 
         File out = new File(monFichier);
         out.renameTo(new File("Facture-du-"+dateFormat.format(actuelle)));
+=======
+	
+		Date actuelle = new Date();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+>>>>>>> 9ec3da71d69c1a1d51e4be4b3bdc54b6ebd43540
 
-		
-
+		File out = new File(monFichier);
+		out.renameTo(new File("Facture-du-"+dateFormat.format(actuelle)));
 		
 	}
-	
-	
-	
-
 	
 	public static String[] lireFichier( String chemin ) throws FileNotFoundException, IOException {
 
@@ -137,6 +132,7 @@ public class Principal {
 	}
 	
 	public static void EcrireFichier(Commande com) throws FileNotFoundException, IOException {
+<<<<<<< HEAD
 
 	 
 		
@@ -151,24 +147,15 @@ public class Principal {
 
 			 }
          }catch(FileNotFoundException fx) {
-
-             System.out.println(fx);
-         }
-		 
+=======
 		
+		if(com.calculerPrix()!=0 || Client.nom != null) {
+			
+		FileWriter fw = new FileWriter(monFichier,true);
+		fw.write(com.toString());
+		fw.close();
+>>>>>>> 9ec3da71d69c1a1d51e4be4b3bdc54b6ebd43540
+
+		}
 	}
-	
-	public static void delete() {
-		
-		
-		 File myObj = new File(monFichier); 
-		    if (myObj.delete()) { 
-		      
-		    } else {
-		      
-		    } 
-		
-	}
-
-
 }
