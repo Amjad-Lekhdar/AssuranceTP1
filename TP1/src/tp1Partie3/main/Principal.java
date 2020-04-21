@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.lang.reflect.Array;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -50,10 +53,16 @@ public class Principal {
 		tabPlats[2]=tab[9];
 		
 		
-		 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd-HH:mm");
-		 LocalDateTime now = LocalDateTime.now();
-		 monFichier="Facture-du-"+dtf.format(now).toString()+".txt";
+		Date actuelle = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd-HH:mm");
+        
+        String date=dateFormat.format(actuelle);
 		
+		 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM\\dd-HH:mm");
+		 LocalDateTime now = LocalDateTime.now();
+		 monFichier="Facture-du-"+date+".txt";
+		 //monFichier="Facture-du-.txt";
+
 		
 		System.out.println("Bienvenue chez Barette");
 		
@@ -97,6 +106,12 @@ public class Principal {
 		
 		
 		EcrireFichier(com3);
+		
+		Date actuelle = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+
+        File out = new File(monFichier);
+        out.renameTo(new File("Facture-du-"+dateFormat.format(actuelle)));
 
 		
 
@@ -123,18 +138,18 @@ public class Principal {
 	
 	public static void EcrireFichier(Commande com) throws FileNotFoundException, IOException {
 
+	 
 		
 		
-		 try {
-			 
+		
+		try {
+			 if(com.calculerPrix()!=0) {
 			
-			 
-			 
 			 FileWriter fw = new FileWriter(monFichier,true);
 			 fw.write(com.toString());
 			 fw.close();
 
-             
+			 }
          }catch(FileNotFoundException fx) {
 
              System.out.println(fx);
