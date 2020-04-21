@@ -1,0 +1,12 @@
+Amjad-Lekhdar :
+    1. S'occuper de faire une commande pour le calcul pour des taxes.
+    
+    	-j'ai modifié la méthode calculerPrix() afin qu'il calcule les taxes
+    	-j'ai rajouté des commande afin d'arrondir le montant de chaque commande à deux chiffres après la virgule
+    
+    2. S'occuper de rajouter une commande qui permet de rafraichir le fichier texte.
+    
+    	-J'ai créé une méthode pour écrire les commandes en fichier texte un à la fois
+    	-On a rajouté la date et l'heure au nom du fichier 
+    	
+    3. S'occuper de faire 6 tests unitaires.
