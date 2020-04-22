@@ -6,11 +6,28 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+<<<<<<< HEAD
+=======
+
+import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.lang.reflect.Array;
+>>>>>>> ad8b65054dfc51fb4896035c10e246f780e0bb48
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+<<<<<<< HEAD
+=======
+import java.util.ArrayList;
+
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+>>>>>>> ad8b65054dfc51fb4896035c10e246f780e0bb48
 import tp1Partie3.main.Commande;
 public class Principal {
 	
@@ -19,7 +36,7 @@ public class Principal {
 	private static Commande com1 ;
 	private static Commande com2;
 	private static Commande com3;
-	private static String monFichier;
+	private static String monFichier="Facture";
 	
 	
 	
@@ -40,6 +57,7 @@ public class Principal {
 		tabPlats[1]=tab[7];
 		tabPlats[2]=tab[9];
 		
+<<<<<<< HEAD
 
 		
 		Date actuelle = new Date();
@@ -54,6 +72,9 @@ public class Principal {
 
 		monFichier="Facture-du-.txt";
 
+=======
+
+>>>>>>> ad8b65054dfc51fb4896035c10e246f780e0bb48
 		
 		System.out.println("Bienvenue chez Barette");
 		
@@ -87,6 +108,7 @@ public class Principal {
 		com3.afficheTotal();
 	
 		EcrireFichier(com3);
+<<<<<<< HEAD
 		
 		Date actuelle = new Date();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
@@ -94,6 +116,17 @@ public class Principal {
 		File out = new File(monFichier);
 		
 		out.renameTo(new File("Facture-du-"+dateFormat.format(actuelle)));
+=======
+
+		
+		Date actuelle = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+
+        File out = new File(monFichier);
+        out.renameTo(new File("Facture-du-"+dateFormat.format(actuelle)));
+
+		
+>>>>>>> ad8b65054dfc51fb4896035c10e246f780e0bb48
 		
 	}
 	
@@ -111,25 +144,59 @@ public class Principal {
 		return chaqueLigne;
 	}
 	
+	
+	
+	
 	public static void EcrireFichier(Commande com) throws FileNotFoundException, IOException {
+<<<<<<< HEAD
+=======
+
+
+	 
+>>>>>>> ad8b65054dfc51fb4896035c10e246f780e0bb48
 		
 		try {
 			 if(com.calculerPrix()!=0) {
 			
 			 FileWriter fw = new FileWriter(monFichier,true);
+			 
 			 fw.write(com.toString());
 			 fw.close();
+			 
 
 			 }
          }catch(FileNotFoundException fx) {
+<<<<<<< HEAD
         	System.out.println(fx); 
          }
+=======
+
+>>>>>>> ad8b65054dfc51fb4896035c10e246f780e0bb48
 		
 		if(com.calculerPrix()!=0 || Client.nom != null) {
 			
 		FileWriter fw = new FileWriter(monFichier,true);
 		fw.write(com.toString());
 		fw.close();
+<<<<<<< HEAD
         }
+=======
+
+
+		}
+		
+         
+>>>>>>> ad8b65054dfc51fb4896035c10e246f780e0bb48
 	}
+		
+		
+		
+		
+}
+	
+	
+	
+	
+	
+	
 }
