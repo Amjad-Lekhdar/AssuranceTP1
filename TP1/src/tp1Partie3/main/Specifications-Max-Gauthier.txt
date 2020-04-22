@@ -1,0 +1,5 @@
+Premièrement, je dois trouver une façon de faire en sorte que la date d'aujourd'hui 
+doit être affichée après chaque enregistrement.
+
+Deuxièmement, je dois faire 6 test unitaires dans mon programme et faire en sorte que 
+le coverage soit un minimum de 75% et plus.
