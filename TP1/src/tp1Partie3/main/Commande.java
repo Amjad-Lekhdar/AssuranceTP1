@@ -114,6 +114,7 @@ public class Commande {
 	
 	public static void commandeIncorrecte(Commande com) {
 		
+		
 		try {
 			if (com.calculerPrix() == 0 || Commande.nbFrites < 0 || Commande.nbPoulet < 0 || Commande.nbPoutine < 0 ) {
 				
